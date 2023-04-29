@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <entityname.ulbatterycell>Unlimited Battery Cell</entityname.ulbatterycell>
+  <entitydescription.ulbatterycell>Unlimited Battery Cell</entitydescription.ulbatterycell>
+  <entityname.unlimitedextinguisher>Unlimited Fire Extinguisher</entityname.unlimitedextinguisher>
+  <entitydescription.unlimitedextinguisher>Unlimited Fire Extinguisher</entitydescription.unlimitedextinguisher>
+  <entityname.unlimitedoxygentank>Unlimited Oxygen Tank</entityname.unlimitedoxygentank>
+  <entitydescription.unlimitedoxygentank>Unlimited Oxygen Tank</entitydescription.unlimitedoxygentank>
+  <displayname.unlimitedoxygentank>Unlimited Oxygen Tank</displayname.unlimitedoxygentank>
+  <entityname.unlimitedoxygenitetank>Unlimited Oxygenite Tank</entityname.unlimitedoxygenitetank>
+  <entitydescription.unlimitedoxygenitetank>Unlimited Oxygenite Tank</entitydescription.unlimitedoxygenitetank>
+</infotexts>

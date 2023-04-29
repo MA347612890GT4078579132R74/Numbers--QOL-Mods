@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="ulbatterycell" variantof="batterycell" invulnerabletodamage="true">
+    <PreferredContainer primary="batterycellrecharger" maxcondition="80" spawnprobability="0" />
+    <PreferredContainer primary="stunbaton,scooter,handheldsonar,sonarbeacon,flashlight,portablepump,exosuit" spawnprobability="0" mincondition="25" />
+    <PreferredContainer secondary="divingcab" amount="3" spawnprobability="0" notcampaign="true" />
+    <PreferredContainer secondary="abandonedengcab,wreckengcab,outpostengcab" minamount="1" maxamount="2" spawnprobability="0" />
+    <PreferredContainer secondary="abandonedstoragecab,wreckstoragecabcab" minamount="1" maxamount="2" spawnprobability="0" />
+    <PreferredContainer secondary="outposttrashcan" amount="1" spawnprobability="0" />
+    <Price baseprice="500" minavailable="8">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+      <Price storeidentifier="merchantarmory" multiplier="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="batterycell" />
+      <Item identifier="lithium" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="25" />
+      <RequiredItem identifier="batterycell" amount="3" mincondition="0.0" maxcondition="1" usecondition="false" />
+      <RequiredItem identifier="batterycell" mincondition="0.0" maxcondition="1" usecondition="false" />
+    </Fabricate>
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="500" fabricationlimitmin="8" fabricationlimitmax="8" quality="0" />
+    <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" />
+    <Quality>
+      <QualityStat stattype="Condition" value="0.25" />
+    </Quality>
+  </Item>
+</Items>

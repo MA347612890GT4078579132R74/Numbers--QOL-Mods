@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="unlimitedextinguisher" variantof="extinguisher" invulnerabletodamage="true">
+    <PreferredContainer primary="extinguisherholder" spawnprobability="0" />
+    <PreferredContainer secondary="engcab,reactorcab" spawnprobability="0" />
+    <Price baseprice="400" minavailable="8">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+      <Price storeidentifier="merchantarmory" multiplier="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="extinguisher" />
+      <Item identifier="sodium" mincondition="1" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="mechanical" level="20" />
+      <RequiredItem identifier="extinguisher" mincondition="0.0" maxcondition="1" usecondition="false" />
+      <RequiredItem identifier="extinguisher" amount="3" mincondition="0.0" maxcondition="1" usecondition="false" />
+    </Fabricate>
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="400" fabricationlimitmin="8" fabricationlimitmax="8" quality="0" />
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="161,105,64,128" origin="0.5,0.5" />
+    <Body width="30" height="100" density="8" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="40,-20" handle1="-6,10" handle2="-10,40" msg="ItemMsgPickUpSelect" />
+    <RepairTool extinguishamount="60.0" range="500" barrelpos="21,25" repairthroughholes="true" hititems="false" IgnoreCharacters="true">
+      <ParticleEmitter particle="extinguisher" velocitymin="1000.0" velocitymax="1650.0" particlespersecond="100" />
+      <StatusEffect type="OnUse" targettype="This" Condition="-0.0" />
+      <sound file="Content/Items/Tools/Extinguisher.ogg" type="OnUse" range="500.0" loop="true" />
+    </RepairTool>
+    <aitarget sightrange="1000" soundrange="1000" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="Condition" value="0.25" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="unlimitedoxygentank" variantof="oxygentank" invulnerabletodamage="true">
+    <Price baseprice="300" minavailable="8">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+      <Price storeidentifier="merchantarmory" multiplier="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1" />
+    </Price>
+    <PreferredContainer secondary="respawncontainer" amount="8" spawnprobability="0" notcampaign="true" />
+    <PreferredContainer primary="oxygentankcontainer" amount="3" spawnprobability="0" />
+    <PreferredContainer primary="oxygengenerator" maxcondition="75" spawnprobability="0" />
+    <PreferredContainer primary="divingmask,plasmacutter,deepdiving" spawnprobability="0" mincondition="25" />
+    <PreferredContainer secondary="divingcab" minamount="3" maxamount="5" spawnprobability="0" mincondition="25" notcampaign="true" />
+    <PreferredContainer secondary="supplycab" amount="1" spawnprobability="0" mincondition="25" notcampaign="true" />
+    <PreferredContainer secondary="outpostsupplycab" minamount="1" maxamount="3" spawnprobability="0" />
+    <PreferredContainer secondary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0" />
+    <PreferredContainer secondary="wreckoxygentankcontainer" minamount="1" maxamount="3" spawnprobability="0" />
+    <PreferredContainer secondary="outpostcrewcabinet" minamount="1" maxamount="3" spawnprobability="0" />
+    <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" minamount="1" maxamount="3" spawnprobability="0" />
+    <Deconstruct time="10">
+      <Item identifier="oxygentank" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" displayname="unlimitedoxygentank" outcondition="1.0">
+      <RequiredSkill identifier="mechanical" level="20" />
+      <RequiredItem identifier="oxygentank" amount="4" mincondition="0.0" maxcondition="1" usecondition="false" />
+    </Fabricate>
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="300" fabricationlimitmin="8" fabricationlimitmax="8" quality="0" />
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Tools/tools.png" sourcerect="410,71,24,66" depth="0.55" origin="0.5,0.5" />
+    <Body width="22" height="64" density="9.7" />
+    <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnFire" target="This" Condition="-0.0" tags="onfire" duration="1" stackable="false" />
+      <StatusEffect type="OnBroken" target="This" delay="1" stackable="false">
+        <Conditional HasStatusTag="onfire" />
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="2000" />
+        <Explosion range="150.0" force="3">
+          <Affliction identifier="burn" strength="25" />
+          <Affliction identifier="stun" strength="5" />
+        </Explosion>
+      </StatusEffect>
+    </Holdable>
+    <Quality>
+      <QualityStat stattype="Condition" value="0.25" />
+    </Quality>
+  </Item>
+  <Item name="" identifier="unlimitedoxygenitetank" variantof="oxygenitetank" invulnerabletodamage="true">
+    <Price baseprice="700" minavailable="8">
+      <Price storeidentifier="merchantoutpost" multiplier="1" />
+      <Price storeidentifier="merchantcity" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" />
+      <Price storeidentifier="merchantmine" multiplier="1" />
+      <Price storeidentifier="merchantarmory" multiplier="1" />
+      <Price storeidentifier="merchantengineering" multiplier="1" />
+    </Price>
+    <PreferredContainer primary="oxygentankcontainer" spawnprobability="0" />
+    <PreferredContainer secondary="wrecksupplycab" amount="1" spawnprobability="0" />
+    <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0" />
+    <Deconstruct time="10">
+      <Item identifier="aluminium" />
+      <Item identifier="aluminium" mincondition="1" />
+      <Item identifier="oxygenitetank" mincondition="1" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" outcondition="1.0" requiredtime="5">
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredItem identifier="oxygenitetank" amount="2" mincondition="0.0" maxcondition="1" usecondition="false" />
+      <RequiredItem identifier="oxygenitetank" amount="2" mincondition="0.0" maxcondition="1" usecondition="false" />
+    </Fabricate>
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="700" fabricationlimitmin="8" fabricationlimitmax="8" quality="0" />
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="319,901,61,61" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Tools/tools.png" sourcerect="486,71,24,64" depth="0.55" />
+    <Body width="22" height="64" density="9.9" />
+    <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnFire" target="This" Condition="-0.0" tags="onfire" duration="1" stackable="false" />
+      <StatusEffect type="OnBroken" target="This" delay="1" stackable="false">
+        <Conditional HasStatusTag="onfire" />
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+        <Explosion range="150.0" force="6">
+          <Affliction identifier="burn" strength="50" />
+          <Affliction identifier="stun" strength="10" />
+        </Explosion>
+      </StatusEffect>
+    </Holdable>
+    <Quality>
+      <QualityStat stattype="Condition" value="0.25" />
+    </Quality>
+  </Item>
+</Items>
